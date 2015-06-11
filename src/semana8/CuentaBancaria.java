@@ -16,9 +16,20 @@ public class CuentaBancaria {
     //-FORMATO id_de_acceso Tipo id    
     public int numero;
     public String nombre;
-    public double saldo, tasa=0.02;
+    public double saldo, tasa = 0.02;
     
     //constructor
+    public CuentaBancaria(){
+        System.out.println("SE LLAMO ESTE CONSTRUCTOR ()");
+        nombre = "panchito";
+        tasa = 0.01;
+        numero = -1;
+    }
+    
+    public CuentaBancaria(int num, String nom){
+        numero = num;
+        nombre = nom;
+    }
     
     //funciones
 }
