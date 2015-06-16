@@ -16,9 +16,9 @@ public class CuentaBancaria {
     //Atributos a nivel de Objeto
     //-FORMATO id_de_acceso Tipo id    
 
-    public int numero;
-    public String nombre;
-    public double saldo, tasa = 0.02;
+    private int numero;
+    private String nombre;
+    private double saldo, tasa = 0.02;
 
     //constructor
     public CuentaBancaria() {
@@ -37,7 +37,36 @@ public class CuentaBancaria {
     public CuentaBancaria(int numero, String nombre) {
         this.numero = numero;
         this.nombre = nombre;
+        saldo = 500;
     }
 
     //funciones
+    public void setNumero(int num){
+        numero = num;
+    }
+    
+    public void setNombre(String n){
+        nombre = n;
+    }
+    
+    public void setTasa(double t){
+        tasa = t;
+    }
+    
+    public void print(){
+        System.out.println(numero+"-"+nombre+" con tasa: "+tasa+
+                " Saldo Lps."+saldo);
+    }
+    
+    /**
+     * Funcion llamada deposita que le adiciona un monto double
+     * al saldo. Se deja depositar SOLO si dicho monto es >=0
+     * NO RETORNA NADA
+     */
+    public void depositar(double monto){
+        if(monto>=0){
+            saldo += monto;
+        }
+    }
+    
 }

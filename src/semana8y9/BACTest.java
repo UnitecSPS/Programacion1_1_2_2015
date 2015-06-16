@@ -16,22 +16,20 @@ import java.util.Scanner;
 public class BACTest {
     public static void main(String[] args) {
         Scanner lea = new Scanner(System.in);
+        
         CuentaBancaria cb1 = new CuentaBancaria();
+        cb1.setNumero(8);
+        cb1.print();
         
         int numero = lea.nextInt();
         String nombre = lea.next();
         CuentaBancaria cb2 = new CuentaBancaria(numero,nombre);
-        
-        cb1.numero = lea.nextInt();
-        System.out.println("cb1 = " + cb1.numero+"-"+cb1.nombre+" con tasa: "+
-                cb1.tasa);
-
-        System.out.println("cb2 = " + cb2.numero+"-"+cb2.nombre+" con tasa: "+
-                cb2.tasa);
+        cb2.depositar(2500);
+        cb2.print();
         
         CuentaBancaria cuentas[] = new CuentaBancaria[10];
         cuentas[0] = new CuentaBancaria();
-        System.out.println(cuentas[0].tasa);
+        //System.out.println(cuentas[0].tasa);
         
         
     }
