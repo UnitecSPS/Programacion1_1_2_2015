@@ -69,4 +69,47 @@ public class CuentaBancaria {
         }
     }
     
+    /**
+     * FORMATO PARA RETORNAR ALGO:
+     *     return EXPR;
+     * REGLAS DE GOCHEZ PARA FUNCIONES QUE DEVUELVEN ALGO:
+     *     1- DEBO retornar un valor compatible de acuerdo al tipo de la funcion
+     *         sino: Tendre un Incompatible Type Error
+     *     2- DEBO SIEMPRE retornar un valor. Todos los caminos de ejecucion
+     *        deben llegar a un retorno. Sino: Missing Return Statement Error
+     *     3- NO DEBO colocar ninguna instruccion inmediatamente despues de un
+     *         return. sino: Unreachable Statement Error
+     */
+    
+    public int getNumero(){
+        return numero;
+    }
+    
+    public String getNombre(){
+        
+        return nombre;
+    }
+    public double getSaldo(){
+        return saldo;
+    }
+    
+    public double getTasa(){
+        return tasa;
+    }
+    
+    public boolean retirar(double m){
+        if(m >=0 && saldo > m){
+            saldo -= m;
+            System.out.println("Se pudo retirar!");
+            return true;
+        }
+        return false;
+    }
+    
+    public double adicionarInteres(){
+        double inte = saldo * tasa;
+        saldo += inte;
+        return inte;
+    }
+    
 }

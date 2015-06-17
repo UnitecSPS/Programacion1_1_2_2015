@@ -26,10 +26,12 @@ public class BACTest {
         CuentaBancaria cb2 = new CuentaBancaria(numero,nombre);
         cb2.depositar(2500);
         cb2.print();
+        System.out.println("El Saldo de cb2 quedo con: "+ cb2.getSaldo());
         
         CuentaBancaria cuentas[] = new CuentaBancaria[10];
-        cuentas[0] = new CuentaBancaria();
-        //System.out.println(cuentas[0].tasa);
+        cuentas[0] = new CuentaBancaria(23);
+        System.out.println(cuentas[0].getNumero());
+        System.out.println(cuentas[0].getSaldo());
         
         
     }
